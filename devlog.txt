@@ -1,0 +1,4 @@
+1/13/21
+- Repo created
+- Pushed some code for testing how items might work
+- Note: changing the return type of item from String to int[] may be clearer?
