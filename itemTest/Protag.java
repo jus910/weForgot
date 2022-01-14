@@ -9,27 +9,12 @@ public class Protag {
         translateBuffs(a.effect());
     }
 
-    public void translateBuffs(String a) {
-        int start = 0;
-        int stop = 0;
-        String read = "";
-        int[] statBoosts = new int[5];
-
-        for(int i = 0; i < 5; i++) {
-            start = a.indexOf(":", start + 1);
-            stop = a.indexOf(".", stop + 1);
-            read = a.substring(start + 1, stop);
-            statBoosts[i] = Integer.parseInt(read);
-
-            if(stop == a.length()-1) {
-                break;
-            }
-        }
-        _HP += statBoosts[0];
-        _Atk += statBoosts[1];
-        _Str += statBoosts[2];
-        _Def += statBoosts[3];
-        _Spd += statBoosts[4];
+    public void translateBuffs(int[] a) {
+        _HP += a[0];
+        _Atk += a[1];
+        _Str += a[2];
+        _Def += a[3];
+        _Spd += a[4];
     }
 
     public String getStats() {

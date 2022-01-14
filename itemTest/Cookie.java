@@ -1,8 +1,9 @@
 public class Cookie extends Item{
 
-    public String effect() {
+    public int[] effect() {
+        int[] i = {10, 10, 0, 0, 0};
         System.out.println("Cookie was consumed");
-        return "HP:10. Atk:10.";
+        return i;
     }
     
 }

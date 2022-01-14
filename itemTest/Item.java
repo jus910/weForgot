@@ -1,6 +1,7 @@
 public class Item {
-    public String effect() {
+    public int[] effect() {
+        int[] i = {0, 0, 0, 0, 0};
         System.out.println("Item was used");
-        return "HP:0. Atk:0. Def:0. Spd:0.";
+        return i;
     }
 }
