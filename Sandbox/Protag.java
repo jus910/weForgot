@@ -1,9 +1,9 @@
 public class Protag {
-    protected int _HP = 10;
-    protected int _Atk = 10;
-    protected int _Str = 10;
-    protected int _Def = 10;
-    protected int _Spd = 10;
+    private int _HP = 10;
+    private int _Atk = 10;
+    private int _Str = 10;
+    private int _Def = 10;
+    private int _Spd = 10;
 
     public void use(Item a) {
         translateBuffs(a.effect());
