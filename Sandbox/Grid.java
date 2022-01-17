@@ -4,18 +4,26 @@ public class Grid {
     int _length;
     int _height;
 
-    public Grid(int length, int height, PlayerTile player) {
+    public Grid(int length, int height) {
         _tiles =  new Tile[height][length];
-        _player = player;
+        
+        int spawnX = (int)(Math.random() * length);
+        int spawnY = (int)(Math.random() * height);
+        _player = new PlayerTile(spawnX, spawnY);
+
         _length = length;
         _height = height;
         
-        for (int y = 0; y < height; y++) {
-            for (int x = 0; x < length; x++) {
+        fillGrid();
+        setTile(_player);
+    }
+
+    public void fillGrid() {
+        for (int y = 0; y < _height; y++) {
+            for (int x = 0; x < _length; x++) {
                 _tiles[y][x] = new Tile(x, y);
             }
         }
-        setTile(player);
     }
 
     public void setTile(Tile tile) {
@@ -31,21 +39,23 @@ public class Grid {
         int y = _player.getY();
         Tile explored = new ExploredTile(x, y);
 
-        if (wasd.equals("w")) {
-            _player.setY(_player.getY() + 1);
+        if (wasd.equals("w") && (y < _height - 1)) {
+            _player.setY(y + 1);
         } else
-        if (wasd.equals("a")) {
-            _player.setX(_player.getX() - 1);
+        if (wasd.equals("a") && (x > 0)) {
+            _player.setX(x - 1);
         } else
-        if (wasd.equals("s")) {
-            _player.setY(_player.getY() - 1);
+        if (wasd.equals("s") && (y > 0)) {
+            _player.setY(y - 1);
         } else
-        if (wasd.equals("d")) {
-            _player.setX(_player.getX() + 1);
+        if (wasd.equals("d") && (x < _length - 1)) {
+            _player.setX(x + 1);
         }
 
-        setTile(_player);
-        setTile(explored, x, y);
+        if ( (_player.getX() != x) || (_player.getY() != y) ) {
+            setTile(_player);
+            setTile(explored, x, y);
+        }
     }
 
     public String toString() {

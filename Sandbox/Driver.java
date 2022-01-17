@@ -1,6 +1,8 @@
-import javax.swing.text.PlainDocument;
+import java.io.*;
+import java.util.*;
 
 public class Driver {
+    private static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
         /*
@@ -10,13 +12,13 @@ public class Driver {
         bob.use(a);
         System.out.println(bob.getStats());
         */
-        PlayerTile player = new PlayerTile(2, 1);
-        Grid grid = new Grid(5, 3, player);
+
+        Grid grid = new Grid(10, 5);
 
         System.out.println(grid);
-        grid.move("a");
-        System.out.println(grid);
-        grid.move("w");
-        System.out.println(grid);
+        while (true) {
+            grid.move(scanner.next());
+            System.out.println(grid);
+        }
     }
 }
