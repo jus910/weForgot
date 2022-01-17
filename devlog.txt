@@ -63,7 +63,13 @@ tales of wisdom gained...
 
 2022-01-13
 --------------------------------------------------------------
-Kevin Li :: Pushed test code
+Kevin Li :: Pushed test code for items
+Justin Mohabir :: <Thing member did.>
+Jonathan Song :: <Thing member did.>
+==============================================================
+2022-01-16
+--------------------------------------------------------------
+Kevin Li :: Pushed test code for grid
 Justin Mohabir :: <Thing member did.>
 Jonathan Song :: <Thing member did.>
 ==============================================================
