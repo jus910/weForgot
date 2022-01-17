@@ -1,7 +1,7 @@
 public class Tile {
-    int _x;
-    int _y;
-    String icon = "-";
+    protected int _x;
+    protected int _y;
+    protected String icon = "-";
 
     public Tile(int xcor, int ycor) {
         _x = xcor;
