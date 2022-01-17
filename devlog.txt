@@ -69,7 +69,7 @@ Jonathan Song :: <Thing member did.>
 ==============================================================
 2022-01-16
 --------------------------------------------------------------
-Kevin Li :: Pushed test code for grid
+Kevin Li :: Pushed test code for grid, then added scanner, and made some fixes
 Justin Mohabir :: <Thing member did.>
 Jonathan Song :: <Thing member did.>
 ==============================================================
