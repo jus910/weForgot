@@ -1,7 +1,7 @@
 public class Protag {
     private int _HP = 10;
     private int _Atk = 10;
-    private int _Str = 10;
+    private double _Str = 1.0;
     private int _Def = 10;
     private int _Spd = 10;
 
@@ -38,7 +38,7 @@ public class Protag {
         return _Atk;
     }
 
-    public int getStr() {
+    public double getStr() {
         return _Str;
     }
 

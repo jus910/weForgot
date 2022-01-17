@@ -33,7 +33,8 @@ public class Grid {
     public void move(String wasd) {
         int x = _player.getX();
         int y = _player.getY();
-        Tile explored = new ExploredTile(x, y);
+        Tile explored = new Tile(x, y);
+        explored.setIcon("+");
 
         if (wasd.equals("w") && (y < _height - 1)) {
             _player.setY(y + 1);
@@ -49,7 +50,9 @@ public class Grid {
         }
 
         if ( (_player.getX() != x) || (_player.getY() != y) ) {
+            // if the coordinates of _player are different from what they were before moving, then set its location again
             setTile(_player);
+            // set the coordinates of the previous tile to an empty tile with the + icon
             setTile(explored);
         }
     }
