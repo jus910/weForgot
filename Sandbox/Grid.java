@@ -30,10 +30,6 @@ public class Grid {
         _tiles[tile.getY()][tile.getX()] = tile;
     }
 
-    public void setTile(Tile tile, int x, int y) {
-        _tiles[y][x] = tile;
-    }
-
     public void move(String wasd) {
         int x = _player.getX();
         int y = _player.getY();
@@ -54,7 +50,7 @@ public class Grid {
 
         if ( (_player.getX() != x) || (_player.getY() != y) ) {
             setTile(_player);
-            setTile(explored, x, y);
+            setTile(explored);
         }
     }
 
