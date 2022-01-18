@@ -1,4 +1,4 @@
-public class Protag {
+public class Protag implements Character{
     private int _HP = 10;
     private int _Atk = 10;
     private double _Str = 1.0;
@@ -7,6 +7,10 @@ public class Protag {
 
     public void use(Item a) {
         translateBuffs(a.effect());
+    }
+
+    public void attack(Character opponent) {
+        opponent.lowerHP(10);
     }
 
     public void translateBuffs(int[] a) {
