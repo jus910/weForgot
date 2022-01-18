@@ -23,7 +23,7 @@ public class Monster extends Character implements Fighter {
     }
 
     public void attack(Fighter opponent) {
-        
+    	
     }
 
     public void lowerHP(int damage) {
