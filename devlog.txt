@@ -7,33 +7,24 @@ pd 8
 we add items /yoRPG 2 electric boogaloo 
 
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-devlog--
-Use keyboard shortcut to jump to end,
- replicate entry template,
- modify appropriately.
-
-zone of reflection--
-Flesh out each category whenever necessary, appropriate.
- Need not be fully filled in until end of project,
- but best done as you go along.
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 
 /////////// Zone of Reflection \\\\\\\\\\\
 ------------------------------------------
 OBSTACLES OVERCOME
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-wow we so BOSS bc...
+ - Fixed Monsters disappearing from grid when moving
+ - Fixed Player icon disappearing behind Monster icons when moving onto the same tile as a Monster
+ - Fixed infinite battle loop by making defeated monsters not show up on grid and also making it so getCoords() cannot get the coordinates of a dead monster
+    - After a battle, the player would stay on the same coordinates as the monster that was defeated, and initiate a fight against the monster again
+ - Fixed an issue where attempting to get the coordinates of a monster would cause an error because monster was null
 
 UNRESOLVED ISSUES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-blah blah pesky bug...
-some methods that loop while the instance variable inBattle is true do not stop looping when inBattle is set to false
+
 
 COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-if you try to set a variable to scanner.nextline() for later use, the scanner will stop at the line where the variable is initialized, rather than the line the variable is used
+ - if you try to set a variable to scanner.nextline() for later use, the scanner will stop at the line where the variable is initialized, rather than the line the variable is used
 
 MID-DEVELOPMENT DESIGN CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -83,6 +74,7 @@ Kevin Li ::
 Justin Mohabir :: 
   - Modified Driver to make monster encounters happen when the player and monster are on the same tile
   - Created an array of monsters so there can be multiple encounters
+  - Created remove() to remove monsters from the array when defeated
 Jonathan Song :: <Thing member did.>
 ==============================================================
 2022-01-19
@@ -91,6 +83,7 @@ Kevin Li ::
 Justin Mohabir :: 
   - Worked on merging v1.1 and v1.2 together
   - Changed startBattle() to take a Monster as parameter so that encounters work when there are multiple monsters on the grid
+  - removed remove()
 Jonathan Song :: 
   - change pdf and add UML pdf
 ==============================================================
