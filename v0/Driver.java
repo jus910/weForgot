@@ -19,16 +19,12 @@ public class Driver {
 
     public void enableGrid() {
         while (!inBattle) {
-        if(monster.getX() == player.getX() && monster.getY() == player.getY()){
-        	System.out.println("Get out of my swakmp!");
-        }   
             System.out.println(grid);
-            
             grid.move(scanner.nextLine());
         }
     }
     public static void main(String[] args) {
-    
+
         Driver game = new Driver();
         game.startGame();
     }
