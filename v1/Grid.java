@@ -27,9 +27,11 @@ public class Grid {
     }
 
     public static void setTile(Character c) {
-        int x = c.getX();
-        int y = c.getY();
-        tiles[y][x] = c;
+        if (c.isAlive()) {
+            int x = c.getX();
+            int y = c.getY();
+            tiles[y][x] = c;
+        }
     }
 
     public static void move(String wasd) {
@@ -93,6 +95,10 @@ public class Grid {
 
     public static void remove(Monster monster) {
       tiles[monster.getY()][monster.getX()]=null;
+    }
+
+    public Protagonist getPlayer() {
+        return player;
     }
 
 }

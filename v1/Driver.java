@@ -5,21 +5,26 @@ public class Driver {
     private Scanner scanner;
     private Grid grid;
     private boolean inBattle;
+    private Fighter[] turnOrder;
+    private Protagonist player;
 
     public Driver() {
         scanner = new Scanner(System.in);
         grid = new Grid(10, 5);
         inBattle = false;
+        player = Grid.getPlayer();
+        turnOrder = new Fighter[10];
+        turnOrder[0] = player;
     }
 
     public void startGame() {
         enableGrid();
     }
-// enables the grid and starts fight
+    // enables the grid and starts fight
     public void enableGrid() {
         while (!inBattle) {
             System.out.println(grid);
-            if((Grid.player).getX()==(Grid.monster).getX() && (Grid.player).getY()==(Grid.monster).getY()){
+            if(player.getCoords().equals(Grid.monster).getCoords()){
               inBattle=true;
               if(battleLost(Grid.monster)){
                 break;
@@ -29,6 +34,13 @@ public class Driver {
             grid.move(scanner.nextLine());
         }
       System.out.println("You have become dead");
+    }
+
+    public void startBattle() {
+      
+      while (inBattle) {
+        
+      }
     }
 // battle method, will take a monster as input, will return if the battle is lost
     public boolean battleLost(Monster monster){

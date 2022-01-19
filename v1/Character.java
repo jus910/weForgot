@@ -30,6 +30,10 @@ public class Character {
         );
     }
 
+    public boolean isAlive() {
+        return HP > 0;
+    }
+
     public int getHP() {
         return HP;
     }
@@ -68,5 +72,10 @@ public class Character {
 
     public void setY(int y) {
         ycor = y;
+    }
+
+    public String getCoords() {
+        String coords = "(" + xcor + ", " + ycor + ")";
+        return coords;
     }
 }
