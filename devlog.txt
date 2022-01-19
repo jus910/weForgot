@@ -38,7 +38,7 @@ maybe some of these will move into the Obs.Ovrcm section...
 
 COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-wow! oo!...
+if you try to set a variable to scanner.nextline() for later use, the scanner will stop at the line where the variable is initialized, rather than the line the variable is used
 
 MID-DEVELOPMENT DESIGN CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -71,5 +71,11 @@ Jonathan Song :: <Thing member did.>
 --------------------------------------------------------------
 Kevin Li :: Pushed test code for grid, then added scanner, and made some fixes
 Justin Mohabir :: <Thing member did.>
+Jonathan Song :: <Thing member did.>
+==============================================================
+2022-01-18
+--------------------------------------------------------------
+Kevin Li :: 
+Justin Mohabir :: Pushed code to make monster encounters happen when the player and monster are on the same tile
 Jonathan Song :: <Thing member did.>
 ==============================================================
