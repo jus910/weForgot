@@ -30,6 +30,10 @@ public class Character {
         );
     }
 
+    public boolean isAlive() {
+        return HP > 0;
+    }
+
     public int getHP() {
         return HP;
     }
@@ -70,10 +74,6 @@ public class Character {
         ycor = y;
     }
 
-    public boolean isAlive() {
-        return (HP > 0);
-    }
-    
     public String getCoords() {
         String coords = "(" + xcor + ", " + ycor + ")";
         return coords;

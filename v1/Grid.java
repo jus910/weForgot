@@ -100,4 +100,12 @@ public class Grid {
         return output;
     }
 
+    public static void remove(Monster monster) {
+      tiles[monster.getY()][monster.getX()]=null;
+    }
+
+    public Protagonist getPlayer() {
+        return player;
+    }
+
 }

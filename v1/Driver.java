@@ -5,17 +5,19 @@ public class Driver {
     private Scanner scanner;
     private Grid grid;
     private boolean inBattle;
+    private Fighter[] turnOrder;
 
     public Driver() {
         scanner = new Scanner(System.in);
         grid = new Grid(10, 5);
         inBattle = false;
+        turnOrder = new Fighter[10];
     }
 
     public void startGame() {
         enableGrid();
     }
-// enables the grid and starts fight
+    // enables the grid and starts fight
     public void enableGrid() {
         while (!inBattle) {
             System.out.println(grid);
@@ -31,6 +33,13 @@ public class Driver {
             grid.move(scanner.nextLine());
         }
       System.out.println("You have become dead");
+    }
+
+    public void startBattle() {
+
+      while (inBattle) {
+
+      }
     }
 // battle method, will take a monster as input, will return if the battle is lost
     public boolean battleLost(Monster monster){
