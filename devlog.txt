@@ -75,7 +75,7 @@ Jonathan Song :: <Thing member did.>
 ==============================================================
 2022-01-18
 --------------------------------------------------------------
-Kevin Li :: 
+Kevin Li :: Pushed code to display the grid again after the monster encounter is over. Also created v1.1 because of merge conflicts
 Justin Mohabir :: Pushed code to make monster encounters happen when the player and monster are on the same tile
 Jonathan Song :: <Thing member did.>
 ==============================================================
