@@ -74,6 +74,9 @@ Justin Mohabir :: <Thing member did.>
 Jonathan Song :: <Thing member did.>
 ==============================================================
 2022-01-18
+Kevin Li :: Pushed test code for grid, then added scanner, and made some fixes
+Justin Mohabir :: Pushed test code for the monster encounters in grid and driver, with multiple
+Jonathan Song :: <Thing member did.>
 --------------------------------------------------------------
 Kevin Li :: Pushed code to display the grid again after the monster encounter is over. Also created v1.1 because of merge conflicts
 Justin Mohabir :: Pushed code to make monster encounters happen when the player and monster are on the same tile
