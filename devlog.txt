@@ -8,11 +8,6 @@ we add items /yoRPG 2 electric boogaloo
 
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-USAGE:
-* Replace all fields, angle brackets included, with specified info.
-  eg, pd <pd#> --> pd 3
-* Delete this instruction block once all teammates understand usage.
-
 devlog--
 Use keyboard shortcut to jump to end,
  replicate entry template,
@@ -63,25 +58,39 @@ We need to start using branches so we don't lose an hour of work to a merge conf
 
 2022-01-13
 --------------------------------------------------------------
-Kevin Li :: Pushed test code for items
+Kevin Li :: 
+  - Created class Item, and class Cookie which extends Item. 
+  - Created a protagonist class with methods useItem() and translateBuffs() to test how items would be used
 Justin Mohabir :: <Thing member did.>
 Jonathan Song :: <Thing member did.>
 ==============================================================
 2022-01-16
 --------------------------------------------------------------
-Kevin Li :: Pushed test code for grid, then added scanner, and made some fixes
+Kevin Li :: 
+  - Created class Grid, which displays the player on a grid in terminal. 
+  - Added methods to create the grid based on a specified length and height. 
+  - Added move() to change the player's location on the grid
+  - Created a Tile class with subclasses PlayerTile and MonsterTile to store their locations to be displayed on the grid
+  - Removed Tile class. Coordinates are stored as instance variables of Character now
 Justin Mohabir :: <Thing member did.>
 Jonathan Song :: <Thing member did.>
 ==============================================================
 2022-01-18
-Kevin Li :: Pushed test code for grid, then added scanner, and made some fixes
-            Pushed code to display the grid again after the monster encounter is over. Also created v1.1 because of merge conflicts
-Justin Mohabir :: Pushed test code for the monster encounters in grid and driver
-                  Pushed code to make monster encounters happen when the player and monster are on the same tile
+Kevin Li :: 
+  - Modified Grid so that the grid will continue to display after an encounter happens
+  - Modified Driver to split code for monster encounters into multiple methods that go into each other, and which loop back to the grid at the end
+  - Created getCoords() to make code look nicer
+Justin Mohabir :: 
+  - Modified Driver to make monster encounters happen when the player and monster are on the same tile
+  - Created an array of monsters so there can be multiple encounters
 Jonathan Song :: <Thing member did.>
 ==============================================================
 2022-01-19
-Kevin Li :: Worked on merging v1.1 and v1.2 together
-Justin Mohabir :: Worked on merging v1.1 and v1.2 together
-Jonathan Song :: change pdf and add UML pdf
+Kevin Li :: 
+  - Worked on merging v1.1 and v1.2 together
+Justin Mohabir :: 
+  - Worked on merging v1.1 and v1.2 together
+  - Changed startBattle() to take a Monster as parameter so that encounters work when there are multiple monsters on the grid
+Jonathan Song :: 
+  - change pdf and add UML pdf
 ==============================================================
