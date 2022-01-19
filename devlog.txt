@@ -34,7 +34,7 @@ wow we so BOSS bc...
 UNRESOLVED ISSUES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 blah blah pesky bug...
-maybe some of these will move into the Obs.Ovrcm section...
+some methods that loop while the instance variable inBattle is true do not stop looping when inBattle is set to false
 
 COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -46,7 +46,7 @@ we changed ___ to ___ bc...
 
 LESSONS LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-tales of wisdom gained...
+We need to start using branches so we don't lose an hour of work to a merge conflict
 ||||||||||||||||||||||||||||||||||||||||||
 
 
