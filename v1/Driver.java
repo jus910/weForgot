@@ -19,12 +19,14 @@ public class Driver {
     public void enableGrid() {
         while (!inBattle) {
             System.out.println(grid);
-            if((Grid.player).getX()==(Grid.monster).getX() && (Grid.player).getY()==(Grid.monster).getY()){
-              inBattle=true;
-              if(battleLost(Grid.monster)){
-                break;
+            for(Monster monster : Grid.monsters){
+              if((Grid.player).getX()==(monster).getX() && (Grid.player).getY()==(monster).getY()){
+                inBattle=true;
+                if(battleLost(monster)){
+                  break;
+                }
+                inBattle=false;
               }
-              inBattle=false;
             }
             grid.move(scanner.nextLine());
         }
@@ -33,21 +35,20 @@ public class Driver {
 // battle method, will take a monster as input, will return if the battle is lost
     public boolean battleLost(Monster monster){
       System.out.println("Oh noes a monster");
-      while ((Grid.player).isAlive() && (Grid.monster).isAlive()){
+      while ((Grid.player).isAlive() && (monster).isAlive()){
         System.out.println("Do you want the sauce");
         if ((scanner.nextLine())=="yes"){
-          (Grid.player).attack((Grid.monster));
-          (Grid.monster).attack((Grid.player));
+          (Grid.player).attack((monster));
+          (monster).attack((Grid.player));
           System.out.println("Monster hit you, you hit monster");
         } else {
-          (Grid.player).attack((Grid.monster));
-          (Grid.monster).attack((Grid.player));
+          (Grid.player).attack((monster));
+          (monster).attack((Grid.player));
           System.out.println("Monster hit you, you hit monster");
         }
       }
       if((Grid.player).isAlive()){
-        System.out.println("you win");
-        Grid.remove(monster);
+        System.out.println("you win, now move off");
         return false;
       }
       return true;

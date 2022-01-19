@@ -3,8 +3,8 @@ public class Grid {
     private static int length;
     private static int height;
     public static Protagonist player;
-    public static Monster monster;
-
+    public static int monsterSize = 2;
+    public static Monster[] monsters = new Monster[monsterSize];
     public Grid(int x, int y) {
         length = x;
         height = y;
@@ -13,23 +13,30 @@ public class Grid {
     }
 
     public static void setupGrid() {
-        int spawnX = (int)(Math.random() * length);
-        int spawnY = (int)(Math.random() * height);
+        int spawnX;
+        int spawnY;
+        Monster foo;
 
-        int spawnMobx = (int)(Math.random() * length);
-        int spawnMoby = (int)(Math.random() * height);
+// For some reason we cannot use a for each loop to initialize everything
+        for(int i = 0; i<monsterSize;i++){
+          spawnX = (int)(Math.random() * length);
+          spawnY = (int)(Math.random() * height);
+          monsters[i] = new Monster(spawnX,spawnY);
+          setTile(monsters[i]);
+        }
+        spawnX = (int)(Math.random() * length);
+        spawnY = (int)(Math.random() * height);
 
         player = new Protagonist(spawnX, spawnY);
         setTile(player);
-
-        monster = new Monster(spawnMobx,spawnMoby);
-        setTile(monster);
     }
 
     public static void setTile(Character c) {
+      if (c.isAlive()) {
         int x = c.getX();
         int y = c.getY();
         tiles[y][x] = c;
+      }
     }
 
     public static void move(String wasd) {
@@ -53,7 +60,9 @@ public class Grid {
             // if the coordinates of _player are different from what they were before moving, then set its location again
             tiles = new Character[height][length];
             setTile(player);
-            setTile(monster);
+            for(Monster monster : monsters){
+              setTile(monster);
+            }
         }
     }
 
@@ -89,10 +98,6 @@ public class Grid {
         }
         output += "\n";
         return output;
-    }
-
-    public static void remove(Monster monster) {
-      tiles[monster.getY()][monster.getX()]=null;
     }
 
 }

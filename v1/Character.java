@@ -69,4 +69,8 @@ public class Character {
     public void setY(int y) {
         ycor = y;
     }
+    
+    public boolean isAlive() {
+        return (HP > 0);
+    }
 }
