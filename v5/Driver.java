@@ -43,17 +43,24 @@ public class Driver {
             }
 
             // new change, must kill all monsters for boss to appear
-            if (monstersDestroyed==Grid.monsterSize){
+            if (monstersDestroyed==Grid.monsterSize) {
                 System.out.println("You have angered a great foe");
-                Grid.bossActive = true;
-                Grid.setTile(boss);
-                if(grid.sameCoords(player, boss) ){
-                    System.out.println("You are now in the court of the Foo King");
-                    inBattle=true;
-                    startBattle(boss);
-                    return;
+                if (!Grid.bossActive) {
+                    Grid.bossActive = true;
+                    Grid.setTile(boss);
                 }
             }
+
+            if (grid.sameCoords(player, boss) && Grid.bossActive){
+                System.out.println("You are now in the court of the Foo King");
+                inBattle=true;
+                startBattle(boss);
+            }
+
+            if (!player.isAlive()) {
+                return;
+            }
+            
             System.out.println(grid);
             System.out.println(monstersDestroyed);
             grid.move(scanner.nextLine());
@@ -84,73 +91,61 @@ public class Driver {
         System.out.println("battle ended");
     }
 
-    public void startBossBattle() {
-        System.out.println("battle started");
-        inBattle = true;
-
-        while(inBattle) {
-            
-            playTurn(player, boss);
-
-            if(!player.isAlive()) {
-                inBattle = false;
-                break;
-            }
-
-            if(!boss.isAlive()) {
-                System.out.println("\n" + "A mighty evil has been vanquished!");
-                inBattle = false;
-                bossDefeated = true;
-                break;
-            }
-        }
-        System.out.println("battle ended");
-    }
-
     // New Change: new method to factor in speed when in battle
     public void playTurn(Protagonist player, Monster monster) {
         int monsterSpd = monster.getSpd();
         int playerSpd = player.getSpd();
         int spdDifference;
 
-        if (monster.getSpd() > playerSpd) {
-            while ( (monster.getSpd() > playerSpd) && player.isAlive() ) {
+        if (monster.getSpd() >= playerSpd) {
+            while ( (monster.getSpd() >= playerSpd) && player.isAlive() ) {
                 spdDifference = monster.getSpd() - playerSpd;
                 monster.attack(player);
+
+                System.out.println("\n" + "Your HP: " + player.getHP());
+                System.out.println("Enemy HP: " + monster.getHP() + "\n");
+
                 monster.setSpd(spdDifference);
             }
             battleOptions(monster);
 
             monster.setSpd(monsterSpd);
-        }
+        } 
 
         if (player.getSpd() > monsterSpd) {
             while ( (player.getSpd() > monsterSpd) && monster.isAlive() ) {
                 spdDifference = player.getSpd() - monsterSpd;
-                
+                battleOptions(monster);
+
+                System.out.println("\n" + "Your HP: " + player.getHP());
+                System.out.println("Enemy HP: " + monster.getHP() + "\n");
+
+                player.setSpd(spdDifference);
             }
             monster.attack(player);
 
             player.setSpd(playerSpd);
-        }
+        } 
         
     }
 
     // New Change: Added option to view inventory
     public void battleOptions(Monster monster) {
-        System.out.println("\n" + "What will you do?");
-        System.out.println("1: attack");
-        System.out.println("2: View Inventory");
+        if (player.isAlive()) {
+            System.out.println("\n" + "What will you do?");
+            System.out.println("1: attack");
+            System.out.println("2: View Inventory");
         
-        int option = Integer.parseInt(scanner.nextLine());
+            int option = Integer.parseInt(scanner.nextLine());
 
-        if (option == 1) {
-            player.attack(monster);
-        } else
-        if (option == 2 ){
-            System.out.println(player.getInventory());
-        } else {
-            battleOptions(monster);
+            if (option == 1) {
+                player.attack(monster);
+            } else
+            if (option == 2 ){
+                System.out.println(player.getInventory());
+            } else {
+                battleOptions(monster);
+            }
         }
     }
 
