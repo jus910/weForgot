@@ -30,6 +30,8 @@ MID-DEVELOPMENT DESIGN CHANGES
  - We are no longer using turnOrder and sorting for the speed based turn system. It overcomplicated things
    - We need a new idea which we could use a sorting algorithm for
  - We are not splitting items into consumables and weapons. For simplicity, it will only be consumables
+ - We are not using a search algorithm for spawning characters/
+   - We are looking to incorporate a search algorithm into inventory and item usage
 
 LESSONS LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
