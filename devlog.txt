@@ -32,6 +32,7 @@ MID-DEVELOPMENT DESIGN CHANGES
  - We are not splitting items into consumables and weapons. For simplicity, it will only be consumables
  - We are not using a search algorithm for spawning characters/
    - We are looking to incorporate a search algorithm into inventory and item usage
+ - Fighter is now a subclass of Character, and no longer an interface. Fighter being an interface was restrictive and annoying to work around, and it didn't offer much function. We are still trying to implement an interface, but for items
 
 LESSONS LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
