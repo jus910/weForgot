@@ -14,7 +14,8 @@ public class Driver {
         scanner = new Scanner(System.in);
         grid = new Grid(10, 5);
         inBattle = false;
-        player = grid.getPlayer();
+        player = Grid.player;
+        boss = Grid.boss;
     }
 
     public void startGame() {
@@ -45,6 +46,7 @@ public class Driver {
             if (monstersDestroyed==Grid.monsterSize){
                 System.out.println("You have angered a great foe");
                 Grid.bossActive = true;
+                Grid.setTile(boss);
                 if(grid.sameCoords(player, boss) ){
                     System.out.println("You are now in the court of the Foo King");
                     inBattle=true;
@@ -53,6 +55,7 @@ public class Driver {
                 }
             }
             System.out.println(grid);
+            System.out.println(monstersDestroyed);
             grid.move(scanner.nextLine());
         }
     }
@@ -74,6 +77,30 @@ public class Driver {
             if(!monster.isAlive()) {
                 System.out.println("\n" + "You won!");
                 inBattle = false;
+                monstersDestroyed++;
+                break;
+            }
+        }
+        System.out.println("battle ended");
+    }
+
+    public void startBossBattle() {
+        System.out.println("battle started");
+        inBattle = true;
+
+        while(inBattle) {
+            
+            playTurn(player, boss);
+
+            if(!player.isAlive()) {
+                inBattle = false;
+                break;
+            }
+
+            if(!boss.isAlive()) {
+                System.out.println("\n" + "A mighty evil has been vanquished!");
+                inBattle = false;
+                bossDefeated = true;
                 break;
             }
         }
