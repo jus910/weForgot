@@ -87,6 +87,7 @@ Kevin Li ::
   - Merged Justin's boss encounter code (v4) with speed system code to create v5
   - Changed the way characters are spawned so that (hopefully) they will never overlap and delete each other on the grid
   - Fixed Boss spawning so that it will spawn as soon as the final normal Monster is defeated
+  - The game can now end if you die
 Justin Mohabir :: 
   - Worked on merging v1 and v1.1 together into v1.2
   - Changed startBattle() to take a Monster as parameter so that encounters work when there are multiple monsters on the grid
