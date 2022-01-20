@@ -97,3 +97,11 @@ Justin Mohabir ::
 Jonathan Song :: 
   - change pdf and add UML pdf
 ==============================================================
+2022-01-20
+Kevin Li :: 
+
+Justin Mohabir :: 
+
+Jonathan Song :: 
+  - Added Cookie and made them a battle option if you open inventory. Made them drop from monsters
+==============================================================
