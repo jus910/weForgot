@@ -28,7 +28,8 @@ COOL STUFF LEARNED
 
 MID-DEVELOPMENT DESIGN CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-we changed ___ to ___ bc...
+ - We are no longer using turnOrder and sorting for the speed based turn system. It overcomplicated things
+   - We need a new idea which we could use a sorting algorithm for
 
 LESSONS LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
