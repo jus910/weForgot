@@ -82,6 +82,8 @@ Jonathan Song :: <Thing member did.>
 2022-01-19
 Kevin Li :: 
   - Worked on merging v1 and v1.1 together into v1.2
+  - Added the speed system
+  - Merged Justin's boss encounter code (v4) with speed system code to create v5
 Justin Mohabir :: 
   - Worked on merging v1 and v1.1 together into v1.2
   - Changed startBattle() to take a Monster as parameter so that encounters work when there are multiple monsters on the grid
