@@ -147,15 +147,17 @@ public class Driver {
             int option = Integer.parseInt(scanner.nextLine());
 
             if (option == 1) {
+
                 player.attack(monster);
+
             } else
-            if (option == 2 ){
+            if (option == 2){
+
                 System.out.println(player.getInventory());
                 System.out.println("Which item?");
-                String option2 = scanner.nextLine();
-                if (option2.equals("cookie")){
-                	player.useItem(cookie,player);
-                }
+                player.useItem(scanner.nextLine(), player);
+                battleOptions(monster);
+
             } else {
                 battleOptions(monster);
             }
