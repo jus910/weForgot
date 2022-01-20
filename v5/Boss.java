@@ -1,13 +1,13 @@
-public class Monster extends Character implements Fighter {
+public class Boss extends Monster implements Fighter {
 
-    public Monster(int x, int y) {
+    public Boss(int x, int y) {
         super(x, y);
-        icon = "M";
-        HP = 10;
+        icon = "B";
+        HP = 100;
         Atk = 10;
-        Str = 1.0;
+        Str = 10;
         Def = 10;
-        Spd = 25;
+        Spd = 10;
     }
 
     public void useItem(Item a) {
@@ -25,7 +25,6 @@ public class Monster extends Character implements Fighter {
     public void attack(Fighter opponent) {
       int damage = (int)(Atk * Str) - opponent.getDef();
       opponent.lowerHP(damage);
-      System.out.println("The Monster attacks for " + damage + " damage");
     }
 
     public void lowerHP(int damage) {
