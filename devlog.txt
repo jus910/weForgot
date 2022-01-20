@@ -86,6 +86,7 @@ Justin Mohabir ::
   - Changed startBattle() to take a Monster as parameter so that encounters work when there are multiple monsters on the grid
   - removed remove()
   - Renamed v1.1 into v2, and v1.2 into v3. v1 and v1.1 worked independently and each had different code, so both were kept in case we need to fall back on either
+  - Added the boss encounter and some basic item methods
 Jonathan Song :: 
   - change pdf and add UML pdf
 ==============================================================
