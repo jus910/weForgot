@@ -21,23 +21,38 @@ public class Grid {
         int spawnY;
 
 // For some reason we cannot use a for each loop to initialize everything
-        for(int i = 0; i<monsterSize;i++){
-          spawnX = (int)(Math.random() * length);
-          spawnY = (int)(Math.random() * height);
-          monsters[i] = new Monster(spawnX,spawnY);
-          setTile(monsters[i]);
+        int i = 0;
+        while (i < monsterSize) {
+            spawnX = (int)(Math.random() * length);
+            spawnY = (int)(Math.random() * height);
+            if (!(tiles[spawnY][spawnX] instanceof Character)) {
+                monsters[i] = new Monster(spawnX,spawnY);
+                setTile(monsters[i]);
+                i++;
+            }
         }
-        spawnX = (int)(Math.random() * length);
-        spawnY = (int)(Math.random() * height);
 
-        player = new Protagonist(spawnX, spawnY);
-        setTile(player);
+        i = 0;
+        while (i < 1) {
+            spawnX = (int)(Math.random() * length);
+            spawnY = (int)(Math.random() * height);
+            if (!(tiles[spawnY][spawnX] instanceof Character)) {
+                player = new Protagonist(spawnX, spawnY);
+                setTile(player);
+                i++;
+            }
+        }
 
         // new boss stuff for construsctor
-        spawnX = (int)(Math.random() * length);
-        spawnY = (int)(Math.random() * height);
-
-        boss = new Boss(spawnX,spawnY);
+        i = 0;
+        while (i < 1) {
+            spawnX = (int)(Math.random() * length);
+            spawnY = (int)(Math.random() * height);
+            if (!(tiles[spawnY][spawnX] instanceof Character)) {
+                boss = new Boss(spawnX, spawnY);
+                i++;
+            }
+        }
     }
 
     public static void setTile(Character c) {
