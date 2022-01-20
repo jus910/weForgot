@@ -12,7 +12,7 @@ public class Protagonist extends Character implements Fighter {
         super.icon = "p";
         HP = 200;
         Atk = 20;
-        Str = 1.0;
+        Str = 100;
         Def = 10;
         Spd = 10;
     }

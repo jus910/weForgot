@@ -57,7 +57,7 @@ public class Driver {
                 startBattle(boss);
             }
 
-            if (!player.isAlive()) {
+            if (!player.isAlive() || bossDefeated) {
                 return;
             }
             
@@ -78,6 +78,11 @@ public class Driver {
 
             if(!player.isAlive()) {
                 inBattle = false;
+                break;
+            }
+
+            if(monster instanceof Boss) {
+                bossDefeated = true;
                 break;
             }
 
