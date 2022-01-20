@@ -100,7 +100,8 @@ Jonathan Song ::
 ==============================================================
 2022-01-20
 Kevin Li :: 
-
+  - Updated battleOptions() and useItem() so that items will activate their effect and then be removed from inventory afterwards. Also added print statement if the player tries to use an item they don't have. 
+  - You can now use an item and attack in the same turn
 Justin Mohabir :: 
 
 Jonathan Song :: 
