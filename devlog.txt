@@ -24,6 +24,7 @@ UNRESOLVED ISSUES
 COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  - if you try to set a variable to scanner.nextline() for later use, the scanner will stop at the line where the variable is initialized, rather than the line the variable is used
+ - You can set things to null
 
 MID-DEVELOPMENT DESIGN CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
