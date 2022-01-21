@@ -64,7 +64,6 @@ public class Driver {
             }
             
             System.out.println(grid);
-            System.out.println(monstersDestroyed);
             grid.move(scanner.nextLine());
         }
     }

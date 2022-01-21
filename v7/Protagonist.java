@@ -8,13 +8,18 @@ public class Protagonist extends Fighter {
 
         icon = "p";
         HP = 200;
-        Atk = 70;
-        Str = 1.2;
+        Atk = 125;
+        Str = 1;
         Def = 40;
         Spd = 40;
     }
 
     public void attack(Fighter opponent) {
+
+        if (!isAlive()) {
+            return;
+        }
+        
         int damage = (int)(Atk * Str) - opponent.getDef();
 
         if (damage < 0) {
@@ -54,7 +59,7 @@ public class Protagonist extends Fighter {
             if (item instanceof Item) {
                 s+=item.getName()+", ";
             } else {
-                s+="   ";
+                s+="____";
             }
         }
         s=s.substring(0,s.length()-3);

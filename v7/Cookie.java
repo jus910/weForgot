@@ -5,6 +5,7 @@ public class Cookie implements Item {
         target.setSpdBuff(target.getSpdBuff() + 10);
         System.out.println("You feel faster");
         System.out.println("Spd +10");
+        System.out.println("current speed: " + target.getSpd());
     }
 
     public String getName() {

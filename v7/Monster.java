@@ -11,13 +11,18 @@ public class Monster extends Fighter {
     }
 
     public void attack(Fighter opponent) {
-      int damage = (int)(Atk * Str) - opponent.getDef();
 
-      if (damage < 0) {
-        damage = 0;
-    }
-      opponent.lowerHP(damage);
-      System.out.println("The Monster attacks for " + damage + " damage");
+        if (!isAlive()) {
+            return;
+        }
+        
+        int damage = (int)(Atk * Str) - opponent.getDef();
+
+        if (damage < 0) {
+            damage = 0;
+        }
+        opponent.lowerHP(damage);
+        System.out.println("The Monster attacks for " + damage + " damage");
     }
 
     public void specialAttack(Fighter opponent) {
