@@ -5,7 +5,7 @@ public class Monster extends Fighter {
         icon = "M";
         HP = (int)(Math.random() * 50) + 50;
         Atk = (int)(Math.random() * 50) + 50;
-        Str = Math.random() + 1;
+        Str = Math.random() + .5;
         Def = (int)(Math.random() * 50) + 50;
         Spd = (int)(Math.random() * 25) + 25;
     }

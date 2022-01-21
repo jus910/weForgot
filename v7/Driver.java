@@ -2,6 +2,7 @@ import java.io.*;
 import java.util.*;
 
 public class Driver {
+    private static final String CLEAR_SCREEN =  "\033[2J";
     private Scanner scanner;
     private Grid grid;
     private boolean inBattle;
@@ -62,7 +63,7 @@ public class Driver {
             if (!player.isAlive() || bossDefeated) {
                 return;
             }
-            
+            System.out.println(CLEAR_SCREEN);
             System.out.println(grid);
             grid.move(scanner.nextLine());
         }
@@ -97,6 +98,7 @@ public class Driver {
         }
         player.resetBuffs();
         System.out.println("<<battle ended>>");
+        wait(1000);
     }
 
     // New Change: new method to factor in speed when in battle
@@ -109,6 +111,7 @@ public class Driver {
             while ( (monster.getSpd() >= playerSpd) && player.isAlive() ) {
                 spdDifference = monster.getSpd() - playerSpd;
                 monster.attack(player);
+                wait(1000);
 
                 System.out.println("\n" + "Your HP: " + player.getHP());
                 System.out.println("Enemy HP: " + monster.getHP() + "\n");
@@ -116,7 +119,7 @@ public class Driver {
                 monster.setSpd(spdDifference);
             }
             battleOptions(monster);
-
+            wait(1000);
             monster.setSpd(monsterSpd);
         } 
 
@@ -124,13 +127,11 @@ public class Driver {
             while ( (player.getSpd() > monsterSpd) && monster.isAlive() ) {
                 spdDifference = player.getSpd() - monsterSpd;
                 battleOptions(monster);
-
-                System.out.println("\n" + "Your HP: " + player.getHP());
-                System.out.println("Enemy HP: " + monster.getHP() + "\n");
-
+                wait(1000);
                 player.setSpd(spdDifference);
             }
             monster.attack(player);
+            wait(1000);
             System.out.println("\n" + "Your HP: " + player.getHP());
             System.out.println("Enemy HP: " + monster.getHP() + "\n");
 
@@ -165,6 +166,14 @@ public class Driver {
                 battleOptions(monster);
             }
         }
+    }
+    
+    private static void wait(int millis) {
+    try {
+      Thread.sleep(millis);
+    	}	
+    catch (InterruptedException e) {
+    	}
     }
 
     public static void main(String[] args) {
