@@ -33,7 +33,9 @@ MID-DEVELOPMENT DESIGN CHANGES
  - We are not splitting items into consumables and weapons. For simplicity, it will only be consumables
  - We are not using a search algorithm for spawning characters/
    - We are looking to incorporate a search algorithm into inventory and item usage
- - Fighter is now a subclass of Character, and no longer an interface. Fighter being an interface was restrictive and annoying to work around, and it didn't offer much function. We are still trying to implement an interface, but for items
+ - Fighter is now a subclass of Character, and no longer an interface. Fighter being an interface was restrictive and annoying to work around, and it didn't offer much function.
+ - Item is now an interface. We expect interface to work a bit better with items because items are expected to vary greatly from each other in effect
+ - Items no longer operate with a tunr limit. Battles are extremely short, so creating and implementing turn limits on item effects ultimately doesn't affect gameplay that much. And also it's annoying and was never a high priority task
 
 LESSONS LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -103,6 +105,7 @@ Jonathan Song ::
 Kevin Li :: 
   - Updated battleOptions() and useItem() so that items will activate their effect and then be removed from inventory afterwards. Also added print statement if the player tries to use an item they don't have. 
   - You can now use an item and attack in the same turn
+  - Items expire after one battle
 Justin Mohabir :: 
  - Added Cookie and made them a battle option if you open inventory. Made them drop from monsters
 Jonathan Song :: 
