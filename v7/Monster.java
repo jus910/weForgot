@@ -3,11 +3,11 @@ public class Monster extends Fighter {
     public Monster(int x, int y) {
         super(x, y);
         icon = "M";
-        HP = (int)(Math.random() * ((100 - 50) + 1)) + 50;
-        Atk = (int)(Math.random() * ((100 - 50) + 1)) + 50;
-        Str = (int)(Math.random() * ((2 - 1) + 1));
-        Def = (int)(Math.random() * ((100 - 50) + 1)) + 50;
-        Spd = (int)(Math.random() * ((50 - 25) + 1)) + 25;
+        HP = (int)(Math.random() * 50) + 50;
+        Atk = (int)(Math.random() * 50) + 50;
+        Str = Math.random() + 1;
+        Def = (int)(Math.random() * 50) + 50;
+        Spd = (int)(Math.random() * 25) + 25;
     }
 
     public void attack(Fighter opponent) {

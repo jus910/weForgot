@@ -11,7 +11,7 @@ public class Protagonist extends Fighter {
         Atk = 20;
         Str = 100;
         Def = 10;
-        Spd = 10;
+        Spd = 40;
     }
 
     public void attack(Fighter opponent) {

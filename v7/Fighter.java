@@ -15,7 +15,7 @@ public class Fighter extends Character{
     
     public String getStats() {
         return ( "\n" +
-            "Player Stats" + "\n" +
+            "Fighter Stats" + "\n" +
             "============" + "\n" +
             "HP: " + getHP() + "\n" +
             "Atk: " + getAtk() + "\n" +

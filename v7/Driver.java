@@ -104,6 +104,7 @@ public class Driver {
         int monsterSpd = monster.getSpd();
         int playerSpd = player.getSpd();
         int spdDifference;
+        System.out.println(monster.getStats());
 
         if (monster.getSpd() >= playerSpd) {
             while ( (monster.getSpd() >= playerSpd) && player.isAlive() ) {
