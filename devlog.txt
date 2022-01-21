@@ -104,7 +104,7 @@ Kevin Li ::
   - Updated battleOptions() and useItem() so that items will activate their effect and then be removed from inventory afterwards. Also added print statement if the player tries to use an item they don't have. 
   - You can now use an item and attack in the same turn
 Justin Mohabir :: 
-
+ - Added Cookie and made them a battle option if you open inventory. Made them drop from monsters
 Jonathan Song :: 
-  - Added Cookie and made them a battle option if you open inventory. Made them drop from monsters
+ - Added Math.random to the monster's stats so that each monster will have random stats
 ==============================================================
