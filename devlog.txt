@@ -59,8 +59,8 @@ We need to start using branches so we don't lose an hour of work to a merge conf
 Kevin Li :: 
   - Created class Item, and class Cookie which extends Item. 
   - Created a protagonist class with methods useItem() and translateBuffs() to test how items would be used
-Justin Mohabir :: <Thing member did.>
-Jonathan Song :: <Thing member did.>
+Justin Mohabir :: 
+Jonathan Song :: 
 ==============================================================
 2022-01-16
 --------------------------------------------------------------
@@ -70,8 +70,8 @@ Kevin Li ::
   - Added move() to change the player's location on the grid
   - Created a Tile class with subclasses PlayerTile and MonsterTile to store their locations to be displayed on the grid
   - Removed Tile class. Coordinates are stored as instance variables of Character now
-Justin Mohabir :: <Thing member did.>
-Jonathan Song :: <Thing member did.>
+Justin Mohabir :: 
+Jonathan Song :: 
 ==============================================================
 2022-01-18
 Kevin Li :: 
@@ -82,7 +82,7 @@ Justin Mohabir ::
   - Modified Driver to make monster encounters happen when the player and monster are on the same tile
   - Created an array of monsters so there can be multiple encounters
   - Created remove() to remove monsters from the array when defeated
-Jonathan Song :: <Thing member did.>
+Jonathan Song :: 
 ==============================================================
 2022-01-19
 Kevin Li :: 
@@ -110,4 +110,11 @@ Justin Mohabir ::
  - Added Cookie and made them a battle option if you open inventory. Made them drop from monsters
 Jonathan Song :: 
  - Added Math.random to the monster's stats so that each monster will have random stats
+==============================================================
+2022-01-23
+Kevin Li :: 
+  - Added shopkeepers and created methods to display available items, and to sell these items to the player
+  - Added gold as an instance variable to Protagonist, and modified driver to give the player gold after winning a battle
+Justin Mohabir :: 
+Jonathan Song :: 
 ==============================================================
