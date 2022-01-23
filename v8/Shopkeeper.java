@@ -12,6 +12,7 @@ public class Shopkeeper extends Character {
         inventory += "pie          20 gold" + "\n";
         inventory += "crab         20 gold" + "\n";
         inventory += "steak         20 gold" + "\n";
+        inventory += "spinach         30 gold" + "\n";
         System.out.println(inventory);
     }
 
@@ -62,6 +63,17 @@ public class Shopkeeper extends Character {
                 a.obtainItem(item);
                 a.addGold(-20);
                 System.out.println("You bought a steak" + "\n");
+            } else {
+                System.out.println("You don't have enough money" + "\n");
+            }
+        }
+        
+        if (input.equals("spinach")) {
+            if (a.getGold() >= 30) {
+                item = new Spinach();
+                a.obtainItem(item);
+                a.addGold(-30);
+                System.out.println("You bought a can of spinach" + "\n");
             } else {
                 System.out.println("You don't have enough money" + "\n");
             }
