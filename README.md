@@ -8,5 +8,6 @@ An RPG in which you spawn on a grid and are able to move around on it. You are r
     - `$ javac Woo.java`
   - In Grid.java, you can modify int monsterSize to increase your number of monster encounters
   - In Driver.java, you can modify the constructor for grid to increase the size of the grid. The constructor is grid(int length, int height)
+  - In Protagonist.java, you can modify inventorySize to increase the number of items you can have
   - type w, a, s, or d in lowercase, and then hit enter to move around on the grid
   - If prompted to enter something, and there is no number corresponding to the possible options, type out the word instead
