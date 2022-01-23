@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-public class Driver {
+public class Woo {
     private static final String CLEAR_SCREEN =  "\033[2J";
     private Scanner scanner;
     private Grid grid;
@@ -14,7 +14,7 @@ public class Driver {
     private Shopkeeper shopkeeper;
     private boolean inShop;
 
-    public Driver() {
+    public Woo() {
         scanner = new Scanner(System.in);
         grid = new Grid(10, 5);
         inBattle = false;
@@ -85,7 +85,7 @@ public class Driver {
         inBattle = true;
 
         while(inBattle) {
-            
+
             playTurn(player, monster);
 
             if(!player.isAlive()) {
@@ -134,7 +134,7 @@ public class Driver {
             battleOptions(monster);
             wait(1000);
             monster.setSpd(monsterSpd);
-        } 
+        }
 
         if (player.getSpd() > monsterSpd) {
             while ( (player.getSpd() > monsterSpd) && monster.isAlive() ) {
@@ -152,8 +152,8 @@ public class Driver {
             }
 
             player.setSpd(playerSpd);
-        } 
-        
+        }
+
     }
 
     // New Change: Added option to view inventory
@@ -170,7 +170,7 @@ public class Driver {
 
             System.out.println("2: view inventory");
             System.out.println("3: special move" + "\n");
-        
+
             int option = Integer.parseInt(scanner.nextLine());
 
             if (option == 1) {
@@ -210,11 +210,11 @@ public class Driver {
             startShopping();
         }
     }
-    
+
     private static void wait(int millis) {
     try {
       Thread.sleep(millis);
-    	}	
+    	}
     catch (InterruptedException e) {
     	}
     }

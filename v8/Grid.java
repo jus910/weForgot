@@ -3,7 +3,7 @@ public class Grid {
     private static int length;
     private static int height;
     public static Protagonist player;
-    public static int monsterSize = 0;
+    public static int monsterSize = 3;
     public static Monster[] monsters = new Monster[monsterSize];
     // new boss stuff for protagonist
     public static Boss boss;
@@ -101,7 +101,7 @@ public class Grid {
             for(Monster monster : monsters){
               setTile(monster);
             }
-            // new boss stuffs 
+            // new boss stuffs
             if(bossActive){
                 setTile(boss);
             }
