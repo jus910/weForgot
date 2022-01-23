@@ -1,12 +1,14 @@
 public class Protagonist extends Fighter {
 
     protected Item[] inventory;
+    protected int inventorySize = 10;
+    protected int itemCount;
     protected int gold;
     protected boolean specialized;
 
     public Protagonist(int x, int y) {
         super(x, y);
-        inventory = new Item[10];
+        inventory = new Item[inventorySize];
         gold = 0;
         specialized = false;
 
@@ -83,10 +85,12 @@ public class Protagonist extends Fighter {
     		i++;
     	}
     	inventory[i]=item;
+        itemCount++;
     }
 
     public void removeItem(int i) {
         inventory[i] = null;
+        itemCount--;
     }
 
     public void addGold(int g) {
@@ -95,6 +99,18 @@ public class Protagonist extends Fighter {
 
     public int getGold() {
         return gold;
+    }
+
+    public int getItemCount() {
+        return itemCount;
+    }
+
+    public int getInvSize() {
+        return inventorySize;
+    }
+
+    public boolean isSpecialized() {
+        return specialized;
     }
 
 }

@@ -10,7 +10,6 @@ public class Driver {
     private int monstersDestroyed;
     private Protagonist player;
     private Boss boss;
-    private Cookie cookie;
     // New instance variables
     private Shopkeeper shopkeeper;
     private boolean inShop;
@@ -23,7 +22,6 @@ public class Driver {
         player = Grid.player;
         boss = Grid.boss;
         shopkeeper = Grid.shopkeeper;
-        cookie = new Cookie();
     }
 
     public void startGame() {
@@ -104,7 +102,6 @@ public class Driver {
                 System.out.println("\n" + "You won!");
                 inBattle = false;
                 monstersDestroyed++;
-                player.obtainItem(cookie);
                 // Get gold after winning
                 int gold = (int)(Math.random() * 25) + 25;
                 player.addGold(gold);
@@ -144,8 +141,6 @@ public class Driver {
                 spdDifference = player.getSpd() - monsterSpd;
                 battleOptions(monster);
                 wait(1000);
-                System.out.println("\n" + "Your HP: " + player.getHP());
-                System.out.println("Enemy HP: " + monster.getHP() + "\n");
                 player.setSpd(spdDifference);
             }
             monster.attack(player);
@@ -166,7 +161,13 @@ public class Driver {
         if (player.isAlive()) {
             System.out.println("\n" + "What will you do?");
             System.out.println("=================");
-            System.out.println("1: attack");
+
+            if (player.isSpecialized()) {
+                System.out.println("1: special attack");
+            } else {
+                System.out.println("1: attack");
+            }
+
             System.out.println("2: view inventory");
             System.out.println("3: special move" + "\n");
         
@@ -196,6 +197,7 @@ public class Driver {
     public void startShopping() {
         shopkeeper.showShop();
         System.out.println("What would you like to buy?");
+        System.out.println("Current balance: " + player.getGold());
         System.out.println("<<type exit to leave>>" + "\n");
         String i = scanner.nextLine();
 
