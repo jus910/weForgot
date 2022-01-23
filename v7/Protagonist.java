@@ -1,10 +1,12 @@
 public class Protagonist extends Fighter {
 
     Item[] inventory;
+    int gold;
 
     public Protagonist(int x, int y) {
         super(x, y);
         inventory = new Item[10];
+        gold = 0;
 
         icon = "p";
         HP = 200;
@@ -59,10 +61,10 @@ public class Protagonist extends Fighter {
             if (item instanceof Item) {
                 s+=item.getName()+", ";
             } else {
-                s+="____";
+                s+="___, ";
             }
         }
-        s=s.substring(0,s.length()-3);
+        s=s.substring(0,s.length()-2);
         s+="]";
         return s;
     }
@@ -77,6 +79,14 @@ public class Protagonist extends Fighter {
 
     public void removeItem(int i) {
         inventory[i] = null;
+    }
+
+    public void addGold(int g) {
+        gold += g;
+    }
+
+    public int getGold() {
+        return gold;
     }
 
 }

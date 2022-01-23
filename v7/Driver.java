@@ -11,13 +11,18 @@ public class Driver {
     private Protagonist player;
     private Boss boss;
     private Cookie cookie;
+    // New instance variables
+    private Shopkeeper shopkeeper;
+    private boolean inShop;
 
     public Driver() {
         scanner = new Scanner(System.in);
         grid = new Grid(10, 5);
         inBattle = false;
+        inShop = false;
         player = Grid.player;
         boss = Grid.boss;
+        shopkeeper = Grid.shopkeeper;
         cookie = new Cookie();
     }
 
@@ -43,6 +48,13 @@ public class Driver {
                     break;
                 }
                 inBattle=false;
+            }
+
+            // New shopkeeper tile
+            if (grid.sameCoords(player, shopkeeper) ) {
+                System.out.println("Welcome to my shop");
+                inShop = true;
+                startShopping();
             }
 
             // new change, must kill all monsters for boss to appear
@@ -93,12 +105,16 @@ public class Driver {
                 inBattle = false;
                 monstersDestroyed++;
                 player.obtainItem(cookie);
+                // Get gold after winning
+                int gold = (int)(Math.random() * 25) + 25;
+                player.addGold(gold);
+                System.out.println("You got " + gold + " gold");
                 break;
             }
         }
         player.resetBuffs();
         System.out.println("<<battle ended>>");
-        wait(1000);
+        wait(2000);
     }
 
     // New Change: new method to factor in speed when in battle
@@ -128,12 +144,17 @@ public class Driver {
                 spdDifference = player.getSpd() - monsterSpd;
                 battleOptions(monster);
                 wait(1000);
+                System.out.println("\n" + "Your HP: " + player.getHP());
+                System.out.println("Enemy HP: " + monster.getHP() + "\n");
                 player.setSpd(spdDifference);
             }
             monster.attack(player);
-            wait(1000);
-            System.out.println("\n" + "Your HP: " + player.getHP());
-            System.out.println("Enemy HP: " + monster.getHP() + "\n");
+
+            if (monster.isAlive()) {
+                wait(1000);
+                System.out.println("\n" + "Your HP: " + player.getHP());
+                System.out.println("Enemy HP: " + monster.getHP() + "\n");
+            }
 
             player.setSpd(playerSpd);
         } 
@@ -165,6 +186,22 @@ public class Driver {
             } else {
                 battleOptions(monster);
             }
+        }
+    }
+
+    public void startShopping() {
+        shopkeeper.showShop();
+        System.out.println("What would you like to buy?");
+        System.out.println("<<type exit to leave>>" + "\n");
+        String i = scanner.nextLine();
+
+        if(i.equals("exit")) {
+            inShop = false;
+        }
+
+        if (inShop) {
+            shopkeeper.sell(player, i);
+            startShopping();
         }
     }
     

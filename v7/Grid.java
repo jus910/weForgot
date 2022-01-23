@@ -8,6 +8,7 @@ public class Grid {
     // new boss stuff for protagonist
     public static Boss boss;
     public static boolean bossActive;
+    public static Shopkeeper shopkeeper;
 
     public Grid(int x, int y) {
         length = x;
@@ -46,13 +47,24 @@ public class Grid {
             }
         }
 
-        // new boss stuff for construsctor
         i = 0;
         while (i < 1) {
             spawnX = (int)(Math.random() * length);
             spawnY = (int)(Math.random() * height);
             if (!(tiles[spawnY][spawnX] instanceof Character)) {
                 boss = new Boss(spawnX, spawnY);
+                i++;
+            }
+        }
+
+        // new stuff for shopkeeper
+        i = 0;
+        while (i < 1) {
+            spawnX = (int)(Math.random() * length);
+            spawnY = (int)(Math.random() * height);
+            if (!(tiles[spawnY][spawnX] instanceof Character)) {
+                shopkeeper = new Shopkeeper(spawnX, spawnY);
+                setTile(shopkeeper);
                 i++;
             }
         }
@@ -93,6 +105,7 @@ public class Grid {
             if(bossActive){
                 setTile(boss);
             }
+            setTile(shopkeeper);
             setTile(player);
         }
     }
