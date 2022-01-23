@@ -121,6 +121,10 @@ Jonathan Song ::
 Kevin Li :: 
   - Added a special attack for protagnonist
   - Removed items as drops from monsters
+  - Added a special attack for the boss which uses sorts the players stats and uses the lowest stat as defense in damage calculation
 Justin Mohabir :: 
+  - Renamed driver to Woo and updated ReadMe
 Jonathan Song :: 
+  - Added 2 new items: Steak and Spinach, which boost atk and str
+  - Updated ReadMe to format it better
 ==============================================================
