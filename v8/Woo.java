@@ -1,3 +1,4 @@
+import java.text.NumberFormat;
 import java.util.Scanner;
 
 public class Woo {
@@ -170,7 +171,14 @@ public class Woo {
             System.out.println("2: view inventory");
             System.out.println("3: special move" + "\n");
 
-            int option = Integer.parseInt(scanner.nextLine());
+
+            int option = 0;
+            
+            try {
+                option = Integer.parseInt(scanner.nextLine());
+            }
+            catch (Exception a) {
+            }
 
             if (option == 1) {
 
