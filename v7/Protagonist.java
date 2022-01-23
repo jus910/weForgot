@@ -1,12 +1,14 @@
 public class Protagonist extends Fighter {
 
-    Item[] inventory;
-    int gold;
+    protected Item[] inventory;
+    protected int gold;
+    protected boolean specialized;
 
     public Protagonist(int x, int y) {
         super(x, y);
         inventory = new Item[10];
         gold = 0;
+        specialized = false;
 
         icon = "p";
         HP = 200;
@@ -24,6 +26,11 @@ public class Protagonist extends Fighter {
         
         int damage = (int)(Atk * Str) - opponent.getDef();
 
+        if (specialized) {
+            damage = damage * 3;
+            specialized = false;
+        }
+
         if (damage < 0) {
             damage = 0;
         }
@@ -32,8 +39,9 @@ public class Protagonist extends Fighter {
         System.out.println("You attack for " + damage + " damage");
     }
 
-    public void specialAttack(Fighter opponent) {
-
+    public void specialize() {
+        specialized = true;
+        System.out.println("You prepare a special move");
     }
 
     // New: useItem now removes item from inventory on use

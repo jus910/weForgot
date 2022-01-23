@@ -167,7 +167,8 @@ public class Driver {
             System.out.println("\n" + "What will you do?");
             System.out.println("=================");
             System.out.println("1: attack");
-            System.out.println("2: View Inventory" + "\n");
+            System.out.println("2: view inventory");
+            System.out.println("3: special move" + "\n");
         
             int option = Integer.parseInt(scanner.nextLine());
 
@@ -177,11 +178,14 @@ public class Driver {
 
             } else
             if (option == 2){
-
                 System.out.println(player.getInventory());
                 System.out.println("Which item?");
                 player.useItem(scanner.nextLine(), player);
                 battleOptions(monster);
+
+            } else
+            if (option == 3) {
+                player.specialize();
 
             } else {
                 battleOptions(monster);
