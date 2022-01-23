@@ -120,6 +120,7 @@ Jonathan Song ::
 2022-01-23
 Kevin Li :: 
   - Added a special attack for protagnonist
+  - Removed items as drops from monsters
 Justin Mohabir :: 
 Jonathan Song :: 
 ==============================================================
