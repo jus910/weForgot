@@ -2,7 +2,7 @@ public class Spinach implements Item {
     boolean itemActive = false;
 
     public void effect(Fighter target) {
-        target.setSpdBuff(target.getStrBuff() + 10);
+        target.setStrBuff(target.getStrBuff() + 10);
         System.out.println("You ate the spinach and felt invigorated.");
         System.out.println("Str +0.25");
         System.out.println("current strength: " + target.getStr());

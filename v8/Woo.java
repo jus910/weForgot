@@ -220,7 +220,7 @@ public class Woo {
     }
 
     public static void main(String[] args) {
-        Driver game = new Driver();
+        Woo game = new Woo();
         game.startGame();
     }
 }

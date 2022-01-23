@@ -11,8 +11,8 @@ public class Shopkeeper extends Character {
         inventory += "cookie       10 gold" + "\n";
         inventory += "pie          20 gold" + "\n";
         inventory += "crab         20 gold" + "\n";
-        inventory += "steak         20 gold" + "\n";
-        inventory += "spinach         30 gold" + "\n";
+        inventory += "steak        20 gold" + "\n";
+        inventory += "spinach      30 gold" + "\n";
         System.out.println(inventory);
     }
 
@@ -48,7 +48,7 @@ public class Shopkeeper extends Character {
 
         if (input.equals("crab")) {
             if (a.getGold() >= 20) {
-                item = new Pie();
+                item = new Crab();
                 a.obtainItem(item);
                 a.addGold(-20);
                 System.out.println("You bought a cooked crab" + "\n");
