@@ -37,7 +37,7 @@ public class Boss extends Monster {
                     playerStats[i - 1] = currentVal;
                 }
             }
-            damage = (int)( (Atk * Str * 1.2) - playerStats[0]);
+            damage = (int)( ( (Atk + (playerStats[1] / 4)) * Str * 1.2) - playerStats[0]);
             specialized = false;
         }
 
