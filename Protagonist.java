@@ -29,7 +29,7 @@ public class Protagonist extends Fighter {
         int atk = Atk + atkBuff;
         double str = Str + strBuff;
         
-        int damage = (int)( (atk * str) - opponent.getDef());
+        int damage = (int)(atk * str) - opponent.getDef();
 
         if (specialized) {
             damage = damage * 3;
