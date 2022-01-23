@@ -13,7 +13,7 @@ public class Protagonist extends Fighter {
         specialized = false;
 
         icon = "p";
-        HP = 200;
+        HP = 250;
         Atk = 125;
         Str = 1;
         Def = 40;
@@ -25,8 +25,11 @@ public class Protagonist extends Fighter {
         if (!isAlive()) {
             return;
         }
+
+        int atk = Atk + atkBuff;
+        double str = Str + strBuff;
         
-        int damage = (int)(Atk * Str) - opponent.getDef();
+        int damage = (int)( (atk * str) - opponent.getDef());
 
         if (specialized) {
             damage = damage * 3;
