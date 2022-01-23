@@ -117,3 +117,9 @@ Kevin Li ::
 Justin Mohabir :: 
 Jonathan Song :: 
 ==============================================================
+2022-01-23
+Kevin Li :: 
+  - Added a special attack for protagnonist
+Justin Mohabir :: 
+Jonathan Song :: 
+==============================================================
