@@ -1,7 +1,7 @@
 # weForgot
 ## Kevin Li, Justin Mohabir, Jonathan Song
 ## Description
-An RPG in which you spawn on a grid and are able to move around on it. You are represented with a p, monsters are represented with an M. Move onto tiles with M on them to start a battle. Defeat all the monsters to summon the boss. Defeat the boss to win.
+An RPG in which you spawn on a grid and are able to move around on it. You are represented with a p, monsters are represented with an M. Move onto tiles with M on them to start a battle. Obtain gold after defeating monsters and use it to buy items from the shopkeeper to help you on your journeys. Defeat all the monsters to summon the boss. Defeat the boss to win.
 ## Launch instructions
   - javac *.java
   - java Woo
